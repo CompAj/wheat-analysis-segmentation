@@ -1,0 +1,6 @@
+image,masked_detections,masked_leaf_coverage_pct,original_detections,original_image_coverage_pct,original_leaf_coverage_pct
+loh(11),0,0,1,0.36,0
+lolr(121),0,0,1,1.93,14.14
+lolr(124),15,47.26,15,3.87,38.56
+webImage,4,0.58,4,0.18,0.51
+webImage_multiple,0,0,,,
