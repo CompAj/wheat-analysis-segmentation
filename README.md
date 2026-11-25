@@ -35,3 +35,9 @@ The [per-image scores](evaluation/validation_dice.csv) and [archived FarmSpectra
 ```sh
 python -m evaluation.compare --validation ../rust-analysis/FarmSpectra/rust-trainer/data/val/images --raw ../rust-analysis/FarmSpectra/data/raw/NWRD_Raw --output scores.csv
 ```
+
+### Field-image verification
+
+A clean Linux CPU worker submitted through the scheduler produced a downloadable result for three original photos and one black-background selection. All four exported mask pairs reproduced their CSV coverage. Running the CLI on the same batch with the environment installed took 8.39 seconds and peaked at 1.05 GiB resident memory on the verification machine. Larger images and batches may differ.
+
+Visual review found under-detection on `Rust1.png`: numerous orange spots are visible, but the model marked only 0.51% of the estimated leaf area. The supplied `lolr(121)_segmented.png` selection gave a measurable leaf and zero predicted rust despite visible discoloration. These images have no verified lesion masks. A small follow-up labeling effort would be most informative on missed leaf regions and on the small spots the detector overlooks.
